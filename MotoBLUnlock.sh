@@ -42,17 +42,16 @@ if [ "$havekey" = "n" ];then
         echo " https://en-us.support.motorola.com/app/standalone/bootloader/unlock-your-device-b"
         echo ""
         echo "Now visit:"
-        echo ""
         echo "  $url"
         echo ""
         echo "Or use the Device ID string: "
-        echo ""
         echo "$unlockKey"
 
     fastboot reboot-bootloader > /dev/null 2>&1
 
     echo ""
-    echo "Within a few minutes, you will get your unlock code in your email. Copy it, and proceed."
+    echo "After following the above processes, within a few minutes, "
+    echo "you will get your unlock code in your email. Copy it, and proceed."
     echo ""
 fi
 echo -n "Enter your unlock code: "
