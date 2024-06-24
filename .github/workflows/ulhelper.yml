@@ -2,6 +2,10 @@ name: UL Helper
 
 on:
   workflow_dispatch:
+    inputs:
+        download_url:
+          description: 'Input URL'
+          required: true
 
 jobs:
   Prepare-Env:
@@ -12,7 +16,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install wget -y
-          wget https://github.com/ReVanced/revanced-manager/releases/download/v1.20.1/revanced-manager-v1.20.1.apk
+          wget ${{ inputs.download_url }}
           ls
           pwd
           echo 'Done'
