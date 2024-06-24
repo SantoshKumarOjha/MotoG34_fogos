@@ -22,5 +22,5 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          document: /*.apk
+          document: /home/runner/work/MotoG34_fogos/MotoG34_fogos/*.apk
           message: "Upload Successful."
