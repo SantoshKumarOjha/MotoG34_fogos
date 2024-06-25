@@ -15,8 +15,8 @@ jobs:
       - name: Install packages,setup & download
         run: |
           sudo apt update
-          sudo apt install wget -y
-          wget ${{ inputs.download_url }}
+          sudo apt install aria2 -y
+          aria2c ${{ inputs.download_url }}
           ls
           pwd
           echo 'Done'
