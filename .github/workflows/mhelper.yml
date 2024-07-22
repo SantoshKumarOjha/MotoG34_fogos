@@ -1,0 +1,35 @@
+name: UL Helper
+
+on:
+  workflow_dispatch:
+    inputs:
+        download_url:
+          description: 'Input URL'
+          required: true
+
+jobs:
+  Prepare-Env:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Install packages,setup & download
+        run: |
+          sudo apt update
+          sudo apt install aria2 -y
+          aria2c --user-agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36" "${{ inputs.download_url }}"
+          ls
+          pwd
+          echo 'Done'
+
+      - name: Upload to Telegram
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          document: /home/runner/work/MotoG34_fogos/MotoG34_fogos/*
+          message: "Upload Successful."
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v1
+        with:
+        files: | 
+          /home/runner/work/MotoG34_fogos/MotoG34_fogos/* 
