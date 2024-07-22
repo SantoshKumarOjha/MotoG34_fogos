@@ -1,4 +1,4 @@
-name: UL Helper
+name: Mirror Helper
 
 on:
   workflow_dispatch:
@@ -20,14 +20,7 @@ jobs:
           ls
           pwd
           echo 'Done'
-
-      - name: Upload to Telegram
-        uses: appleboy/telegram-action@master
-        with:
-          to: ${{ secrets.TELEGRAM_CHAT_ID }}
-          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          document: /home/runner/work/MotoG34_fogos/MotoG34_fogos/*
-          message: "Upload Successful."
+          
       - name: Upload to Release
         uses: softprops/action-gh-release@v1
         with:
