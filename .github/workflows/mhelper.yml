@@ -24,5 +24,5 @@ jobs:
       - name: Upload to Release
         uses: softprops/action-gh-release@v1
         with:
-        files: | 
-          /home/runner/work/MotoG34_fogos/MotoG34_fogos/* 
+          files: | 
+            /home/runner/work/MotoG34_fogos/MotoG34_fogos/* 
