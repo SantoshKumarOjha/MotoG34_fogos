@@ -26,3 +26,4 @@ jobs:
         with:
           files: | 
             /home/runner/work/MotoG34_fogos/MotoG34_fogos/* 
+          tag_name: ${{ github.run_id }}
