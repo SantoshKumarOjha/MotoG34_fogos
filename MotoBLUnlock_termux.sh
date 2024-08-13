@@ -44,8 +44,9 @@ if [ "$havekey" = "n" ];then
         echo "Now visit:"
         echo "  $url"
         echo ""
-        echo "Or use the Device ID string: "
-        echo "$unlockKey"
+        echo "---------: Your DEVICE ID string :---------"
+		echo ""
+        echo "  $unlockKey"
 
     termux-fastboot reboot-bootloader > /dev/null 2>&1
 

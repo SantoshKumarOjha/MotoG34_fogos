@@ -43,9 +43,9 @@ if [ "$havekey" = "n" ];then
         echo ""
         echo "Now visit:"
         echo "  $url"
-        echo ""
-        echo "Or use the Device ID string: "
-        echo "$unlockKey"
+        echo "---------: Your DEVICE ID string :---------"
+		echo ""
+        echo "  $unlockKey"
 
     fastboot reboot-bootloader > /dev/null 2>&1
 
